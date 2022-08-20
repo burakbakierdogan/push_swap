@@ -6,7 +6,7 @@
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 13:20:45 by berdogan          #+#    #+#             */
-/*   Updated: 2022/08/18 16:25:49 by berdogan         ###   ########.fr       */
+/*   Updated: 2022/08/20 02:06:33 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,28 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "push_swap.h"
+
+static int	*ft_sort(int *ptr, int ac)
+{
+	int *stack_b;
+	int	index;
+
+	index = 0;
+	b = malloc (sizeof(char) * ac);
+	if (!b)
+		return (NULL);
+	while (1)
+	{
+		if (ptr[index] > ptr[index + 1])
+		{
+			res = ft_swap((ptr + index), (ptr + index + 1));
+			if(!res)
+				break;
+		}
+		else if ()
+	}
+
+}
 
 int	main(int ac, char *argv[])
 {
@@ -31,6 +53,8 @@ int	main(int ac, char *argv[])
 		ac--;
 	}
 	index = 0;
+
+
 	while (ac1)
 	{
 		printf("%d\n", a[index++]);
