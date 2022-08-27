@@ -6,7 +6,7 @@
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 18:07:18 by berdogan          #+#    #+#             */
-/*   Updated: 2022/08/28 01:35:44 by berdogan         ###   ########.fr       */
+/*   Updated: 2022/08/28 01:36:06 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,4 @@ int	ft_atoi(const char *nptr)
 }
 
 
-/*
-deneme
-*/
+
