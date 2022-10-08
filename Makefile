@@ -10,7 +10,21 @@
 #                                                                              #
 # **************************************************************************** #
 
+NAME := push_swap
 CC := clang
-CFLAGS := -Wall -Werror -Wextra -I ./libft
-SRCS := $(libft/*.c)
+CFLAGS := -Wall -Werror -Wextra -o
+SRCS := push_swap.c ft_error.c
+
+all: mlibft $(NAME)
+
+$(NAME): $(SRCS)
+	$(CC) $(CFLAGS) $(NAME) $(SRCS) libft/libft.a
+mlibft: $(SRCS)
+	make -C ./libft
+clean:
+	make -C ./libft clean && rm -rf *.o
+fclean: clean
+	rm -rf $(NAME)
+	rm -rf libft/libft.a
+re: fclean all
 

@@ -10,9 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
+#include "libft/libft.h"
 
 int	main(int ac, char *argv[])
 {
-	
+	if (ac)
+	ft_printf("burak\n");
+	ft_error("burak\n");
+
+	argv[1][0] = 'a';
 }

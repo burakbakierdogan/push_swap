@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 14:13:13 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/07 14:13:13 by berdogan         ###   ########.fr       */
+/*   Created: 2022/10/08 03:09:14 by berdogan          #+#    #+#             */
+/*   Updated: 2022/10/08 03:09:14 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "libft/libft.h"
+# ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-void	ft_error(char *str)
-{
-	while (*str)
-	{
-		if (!ft_isdigit(*str++))
-		{
-			ft_printf("Error\n");
-			exit(1);
-		}
-	}
-}
+#include <stdlib.h>
+void	ft_error(char *str);
+
+# endif
