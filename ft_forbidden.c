@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_forbidden.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 03:09:14 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/08 03:09:14 by berdogan         ###   ########.fr       */
+/*   Created: 2022/10/09 01:59:24 by berdogan          #+#    #+#             */
+/*   Updated: 2022/10/09 01:59:24 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
+#include "libft/libft.h"
 
-#include <stdlib.h>
-
-
-typedef struct s_stack
+void	ft_forbidden(char *str)
 {
-	int		nbr;
-	struct	s_stack *next;
-}	t_stack;
+	int	i;
 
-t_stack	*ft_newnode(int nbr);
-char	**ft_get_args(int size, char **argv);
-t_stack	*ft_error_management(int size, char *argv[]);
-int	*ft_convert(char **str);
-void	ft_forbidden(char *str);
-void	ft_check_numbers(int *ptr, int nbr);
-
-# endif
+	i = 0;
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]) && !ft_is_space(str[i]))
+		{
+			ft_printf("Error\n");
+			exit(1);
+		}
+		i++;
+	}
+}

@@ -13,7 +13,8 @@
 NAME := push_swap
 CC := clang
 CFLAGS := -Wall -Werror -Wextra -o
-SRCS := push_swap.c ft_error.c
+SRCS := push_swap.c ft_error_management.c ft_get_args.c ft_convert.c ft_forbidden.c \
+		ft_check_numbers.c
 
 all: mlibft $(NAME)
 

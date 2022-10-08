@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_check_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 03:09:14 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/08 03:09:14 by berdogan         ###   ########.fr       */
+/*   Created: 2022/10/09 02:00:34 by berdogan          #+#    #+#             */
+/*   Updated: 2022/10/09 02:00:34 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
+#include "libft/libft.h"
 
-#include <stdlib.h>
-
-
-typedef struct s_stack
+void	ft_check_numbers(int *ptr, int nbr)
 {
-	int		nbr;
-	struct	s_stack *next;
-}	t_stack;
+	int	i;
+	int	duplicate;
 
-t_stack	*ft_newnode(int nbr);
-char	**ft_get_args(int size, char **argv);
-t_stack	*ft_error_management(int size, char *argv[]);
-int	*ft_convert(char **str);
-void	ft_forbidden(char *str);
-void	ft_check_numbers(int *ptr, int nbr);
+	i = 0;
+	duplicate = 0;
+	if (nbr < INT_MIN || nbr > INT_MAX)
+	{
+		ft_printf("Error\n");
+		exit(1);
+	}
+	while (ptr[i])
+	{
+		if (ptr[i] == nbr)
+			duplicate++;
+		i++;
+		if (duplicate > 1)
+		{
+			ft_printf("Error\n");
+			exit(1);
+		}
+	}
 
-# endif
+}
