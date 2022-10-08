@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_list_op.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 03:09:14 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/08 03:09:14 by berdogan         ###   ########.fr       */
+/*   Created: 2022/10/08 07:05:46 by berdogan          #+#    #+#             */
+/*   Updated: 2022/10/08 07:05:46 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-#include <stdlib.h>
 
 
-typedef struct s_stack
+#include "libft/libft.h"
+#include "push_swap.h"
+
+t_stack	*ft_newnode(int nbr)
 {
-	int		nbr;
-	struct	s_stack *next;
-}	t_stack;
+	t_stack	*new;
 
-void	ft_error(char *str);
-t_stack	*ft_newnode(int nbr);
+	new = malloc(sizeof(t_stack));
+	if (!new)
+		return (NULL);
+	new -> next = NULL;
+	new -> nbr = nbr;
+	return (new);
+}
 
-# endif
+
