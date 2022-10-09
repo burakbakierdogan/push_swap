@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_free_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 13:20:45 by berdogan          #+#    #+#             */
-/*   Updated: 2022/08/26 19:42:50 by berdogan         ###   ########.fr       */
+/*   Created: 2022/10/09 06:04:59 by berdogan          #+#    #+#             */
+/*   Updated: 2022/10/09 06:04:59 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include "libft/libft.h"
+#include "push_swap.h"
 
-int	main(int ac, char *argv[])
+void	ft_free_stack(t_stack *begin)
 {
-	t_stack	*a;
 	t_stack	*hold;
-
-	a = ft_error_management(ac, argv);
-	hold = a;
-	while (a)
+	
+	hold = begin;
+	while (begin)
 	{
-		ft_printf("%d ", a -> nbr);
-		a = a -> next;
+		begin = begin -> next;
+		free(hold);
+		hold = begin;
 	}
-	ft_printf("\n");
-	ft_free_stack(hold);
+
 }

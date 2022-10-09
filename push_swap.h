@@ -30,5 +30,7 @@ void	ft_forbidden(char *str);
 void	ft_check_numbers(int *ptr, int nbr, char *str);
 t_stack	*ft_create_stack_a(int *arr, int size);
 t_stack	*ft_new_node(int nbr);
+void	ft_free_stack(t_stack *begin);
+t_stack	*ft_last_node(t_stack *begin);
 
 # endif

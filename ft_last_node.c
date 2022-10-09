@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_last_node.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 13:20:45 by berdogan          #+#    #+#             */
-/*   Updated: 2022/08/26 19:42:50 by berdogan         ###   ########.fr       */
+/*   Created: 2022/10/09 06:08:10 by berdogan          #+#    #+#             */
+/*   Updated: 2022/10/09 06:08:10 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include "libft/libft.h"
+#include "push_swap.h"
 
-int	main(int ac, char *argv[])
+t_stack	*ft_last_node(t_stack *begin)
 {
-	t_stack	*a;
-	t_stack	*hold;
-
-	a = ft_error_management(ac, argv);
-	hold = a;
-	while (a)
-	{
-		ft_printf("%d ", a -> nbr);
-		a = a -> next;
-	}
-	ft_printf("\n");
-	ft_free_stack(hold);
+	if (begin == NULL)
+		return (NULL);
+	while (begin -> next)
+		begin = begin -> next;
+	return (begin);
 }
+
