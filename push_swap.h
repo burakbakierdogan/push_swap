@@ -28,5 +28,7 @@ t_stack	*ft_error_management(int size, char *argv[]);
 int	*ft_convert(char **str);
 void	ft_forbidden(char *str);
 void	ft_check_numbers(int *ptr, int nbr, char *str);
+t_stack	*ft_create_stack_a(int *arr, int size);
+t_stack	*ft_new_node(int nbr);
 
 # endif

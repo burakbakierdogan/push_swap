@@ -15,6 +15,13 @@
 
 int	main(int ac, char *argv[])
 {
-	ft_error_management(ac, argv);
+	t_stack	*a;
 
+	a = ft_error_management(ac, argv);
+	while (a)
+	{
+		ft_printf("%d ", a -> nbr);
+		a = a -> next;
+	}
+	ft_printf("\n");
 }
