@@ -20,7 +20,7 @@ int	*ft_convert(char **str)
 	int	j;
 
 	i = 0;
-	j = 0;
+	j = -1;
 	while (str[i])
 		ft_forbidden(str[i++]);
 	ptr = (int *) malloc (sizeof(int) * (i));
@@ -29,8 +29,8 @@ int	*ft_convert(char **str)
 	i = -1;
 	while (str[++i])
 		ptr[i] = ft_atoi(str[i]);
-	while (j < i)
-		ft_check_numbers(ptr, ptr[j++]);
+	while (++j < i)
+		ft_check_numbers(ptr, ptr[j], str[j]);
 	i = 0;
 	while(str[i])
 		free(str[i++]);
