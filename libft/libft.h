@@ -6,7 +6,7 @@
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:12:41 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/11 05:57:46 by berdogan         ###   ########.fr       */
+/*   Updated: 2022/10/11 07:02:24 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,4 +108,5 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del) (void *));
 t_radix_list	*ft_radix_sort(int *ar, int size);
 char	*ft_itoa_base_v2(int nbr, int base, char format);
+t_radix_list	*ft_radix_new_node(char *str);
 #endif
