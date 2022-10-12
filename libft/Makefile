@@ -6,7 +6,7 @@
 #    By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 16:24:52 by berdogan          #+#    #+#              #
-#    Updated: 2022/10/11 07:02:12 by berdogan         ###   ########.fr        #
+#    Updated: 2022/10/12 07:16:34 by berdogan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,16 +24,19 @@ SRCS	:= ft_isascii.c ft_isprint.c ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 			ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_strmapi.c \
 			ft_printf.c ft_itoa_base.c get_next_line.c get_next_line_utils.c \
 			get_next_line_bonus.c get_next_line_utils_bonus.c ft_is_capital.c \
-			ft_is_space.c ft_atoi_base.c\
+			ft_is_space.c ft_atoi_base.c ft_del_node.c ft_divide_list.c \
 			ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 			ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c ft_radix_sort.c\
-			ft_itoa_base_v2.c ft_radix_new_list.c ft_radix_new_node.c
+			ft_itoa_base_v2.c ft_radix_new_list.c ft_radix_new_node.c ft_radix_neg_list.c \
+			ft_cpy_node.c
 OBJS	:= $(SRCS:%.c=%.o)
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS) $(INCLUDE)
+$(NAME):	$(OBJS) $(INCLUDE) compile
 			ar -rcs $(NAME) $(OBJS)
+compile:
+	$(CC) $(CFLAGS) -g -c $(SRCS)
 clean:
 			$(RM) $(OBJS)
 fclean:		clean

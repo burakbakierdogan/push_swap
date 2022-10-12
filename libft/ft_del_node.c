@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_radix_new_list.c                                :+:      :+:    :+:   */
+/*   ft_del_node.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 07:07:08 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/11 07:07:08 by berdogan         ###   ########.fr       */
+/*   Created: 2022/10/12 02:37:20 by berdogan          #+#    #+#             */
+/*   Updated: 2022/10/12 02:37:20 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_radix_list	*ft_radix_new_list(t_radix_list *begin, int *ar, int size)
+t_radix_list	*ft_del_node(t_radix_list *begin)
 {
-	int				i;
 	t_radix_list	*hold;
+	t_radix_list	*hold2;
+	t_radix_list	*hold3;
 
-	i = 0;
-	hold = begin;
-	while (i <= size)
+	if (begin -> nbr[0] == '-')
 	{
-		begin -> next = ft_radix_new_node(ft_itoa_base_v2(ar[i++], 2, 'X'));
-		begin = begin -> next;
+		hold = begin -> next;
+		free(begin);
+		return (hold);
 	}
+	while (begin -> next -> nbr[0] != '-' && begin)
+		begin = begin -> next;
+	hold = begin;
+	hold2 = begin -> next -> next;
+	hold3 = begin -> next;
+	free (hold3);
+	hold -> next = hold2;
 	return (hold);
 }

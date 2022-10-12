@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_radix_new_list.c                                :+:      :+:    :+:   */
+/*   ft_radix_neg_list.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 07:07:08 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/11 07:07:08 by berdogan         ###   ########.fr       */
+/*   Created: 2022/10/11 23:56:11 by berdogan          #+#    #+#             */
+/*   Updated: 2022/10/11 23:56:11 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_radix_list	*ft_radix_new_list(t_radix_list *begin, int *ar, int size)
+t_radix_list	*ft_radix_neg_list(t_radix_list *begin)
 {
-	int				i;
 	t_radix_list	*hold;
+	t_radix_list	*negative;
 
-	i = 0;
 	hold = begin;
-	while (i <= size)
+	negative = NULL;
+	while (begin)
 	{
-		begin -> next = ft_radix_new_node(ft_itoa_base_v2(ar[i++], 2, 'X'));
-		begin = begin -> next;
+		if (begin -> nbr[0] == '-')
+		{
+			negative = ft_cpy_node(begin, negative);
+			if (begin == hold)
+			{
+				hold = ft_del_node(hold);
+				begin = hold;
+			}
+			else
+				begin = ft_del_node(hold);
+		}
+		else
+			begin = begin -> next;
 	}
-	return (hold);
+	return (negative);
 }
