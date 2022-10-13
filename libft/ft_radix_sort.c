@@ -26,11 +26,25 @@ t_radix_list	*ft_radix_sort(int *ar, int size)
 	radix = ft_divide_list(unsorted);
 	pos = radix.positive;
 	neg = radix.negative;
+
+	return (pos);
+}
+
+
+/*
+hold = neg;
+	hold1 = pos;
 	while(neg)
 	{
 		ft_printf("neg = %s|| ", neg -> nbr);
 		neg = neg -> next;
 	}
+	while (pos)
+	{
+		ft_printf("pos = %s||", pos -> nbr);
+		pos = pos -> next;
+	}
 	ft_printf("\n");
-	return (pos);
-}
+	ft_free_with_content(hold);
+	ft_free_with_content(hold1);
+*/

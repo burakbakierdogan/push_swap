@@ -28,18 +28,6 @@ static	t_radix_list *ft_neg(char *str, t_radix_list *neg)
 	return (hold);
 }
 
-static	void	ft_free(t_radix_list *unsorted)
-{
-	t_radix_list	*hold;
-
-	while (unsorted)
-	{
-		hold = unsorted -> next;
-		free(unsorted);
-		unsorted = hold;
-	}
-}
-
 t_total_list	ft_divide_list(t_radix_list *unsorted)
 {
 	t_radix_list	*neg;
@@ -59,8 +47,9 @@ t_total_list	ft_divide_list(t_radix_list *unsorted)
 		unsorted = unsorted -> next;
 	}
 	unsorted = hold;
-	ft_free(unsorted);
+	ft_free_only_list(unsorted);
 	ret.negative = neg;
 	ret.positive = pos;
+
 	return (ret);
 }

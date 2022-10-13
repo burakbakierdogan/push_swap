@@ -6,7 +6,7 @@
 #    By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 16:24:52 by berdogan          #+#    #+#              #
-#    Updated: 2022/10/12 07:16:34 by berdogan         ###   ########.fr        #
+#    Updated: 2022/10/13 05:43:24 by berdogan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRCS	:= ft_isascii.c ft_isprint.c ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 			ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 			ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c ft_radix_sort.c\
 			ft_itoa_base_v2.c ft_radix_new_list.c ft_radix_new_node.c ft_radix_neg_list.c \
-			ft_cpy_node.c
+			ft_cpy_node.c ft_free_only_list.c ft_free_with_content.c
 OBJS	:= $(SRCS:%.c=%.o)
 
 all:		$(NAME)
