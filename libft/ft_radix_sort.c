@@ -14,37 +14,29 @@
 
 t_radix_list	*ft_radix_sort(int *ar, int size)
 {
-	int				i;
 	t_radix_list	*unsorted;
 	t_total_list	radix;
-	t_radix_list	*neg;
-	t_radix_list	*pos;
 
-	i = 0;
-	unsorted = ft_radix_new_node(ft_itoa_base_v2(ar[0], 2, 'X'));
-	unsorted = ft_radix_new_list(unsorted, ar + 1, size - 1);
+	unsorted = NULL;
+	unsorted = ft_radix_new_list(unsorted, ar, size);
 	radix = ft_divide_list(unsorted);
-	pos = radix.positive;
-	neg = radix.negative;
 
-	return (pos);
 }
 
 
 /*
-hold = neg;
-	hold1 = pos;
-	while(neg)
+while (radix.negative)
 	{
-		ft_printf("neg = %s|| ", neg -> nbr);
-		neg = neg -> next;
-	}
-	while (pos)
-	{
-		ft_printf("pos = %s||", pos -> nbr);
-		pos = pos -> next;
+		ft_printf("negatif = %d|| ", ft_atoi_base (radix.negative -> nbr, 2));
+		radix.negative = radix.negative -> next;
 	}
 	ft_printf("\n");
-	ft_free_with_content(hold);
-	ft_free_with_content(hold1);
+	while (radix.positive)
+	{
+		ft_printf("pozitif = %d|| ",ft_atoi_base (radix.positive -> nbr, 2));
+		radix.positive = radix.positive -> next;
+	}
+	return(radix.positive);
+
+	do not forget to free the neg and positive list with contents
 */

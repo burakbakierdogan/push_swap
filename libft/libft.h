@@ -6,7 +6,7 @@
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:12:41 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/13 05:38:10 by berdogan         ###   ########.fr       */
+/*   Updated: 2022/10/13 06:12:20 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,8 +116,6 @@ t_radix_list	*ft_radix_sort(int *ar, int size);
 char	*ft_itoa_base_v2(int nbr, int base, char format);
 t_radix_list	*ft_radix_new_node(char *str);
 t_radix_list	*ft_radix_new_list(t_radix_list *begin, int *ar, int size);
-t_radix_list	*ft_radix_neg_list(t_radix_list *begin);
-t_radix_list	*ft_cpy_node(t_radix_list *begin, t_radix_list *negative);
 t_radix_list	*ft_del_node(t_radix_list *begin);
 t_total_list	ft_divide_list(t_radix_list *unsorted);
 void	ft_free_only_list(t_radix_list *unsorted);

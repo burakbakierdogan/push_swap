@@ -50,6 +50,5 @@ t_total_list	ft_divide_list(t_radix_list *unsorted)
 	ft_free_only_list(unsorted);
 	ret.negative = neg;
 	ret.positive = pos;
-
 	return (ret);
 }

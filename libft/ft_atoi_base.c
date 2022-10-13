@@ -6,7 +6,7 @@
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 16:52:53 by berdogan          #+#    #+#             */
-/*   Updated: 2022/09/26 18:06:09 by berdogan         ###   ########.fr       */
+/*   Updated: 2022/10/13 06:38:48 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,12 @@ static	char	*ft_new_str(char *str, int base)
 	new = malloc ((i + 1) * sizeof(char));
 	if (!new)
 		return (NULL);
-	i = -1;
-	while (str[++i] >= 48 && str[i] < 48 + base)
+	i = 0;
+	while (str[i] >= 48 && str[i] < 48 + base)
+	{
 		new[i] = str[i];
+		i++;
+	}
 	new[i] = '\0';
 	return (new);
 }
@@ -98,7 +101,7 @@ int	ft_atoi_base(char *str, int base)
 		i++;
 	}
 	if (base >= 2 && base <= 10)
-		new = ft_new_str(str, base);
+		new = ft_new_str(str + i, base);
 	else if (base > 10 && base < 17)
 		new = ft_new_str_2(str, base);
 	else
@@ -110,7 +113,6 @@ int	ft_atoi_base(char *str, int base)
 /*
 int	main(void)
 {
-	//ft_printf ("%d\n", ft_atoi_base ("12312", 10));
-	ft_printf ("%d\n", ft_atoi_base ("FF", 16));
+	ft_printf ("%d\n", ft_atoi_base ("-10", 2));
 }
 */
