@@ -6,7 +6,7 @@
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:12:41 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/13 06:12:20 by berdogan         ###   ########.fr       */
+/*   Updated: 2022/10/14 04:49:36 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,4 +120,8 @@ t_radix_list	*ft_del_node(t_radix_list *begin);
 t_total_list	ft_divide_list(t_radix_list *unsorted);
 void	ft_free_only_list(t_radix_list *unsorted);
 void	ft_free_with_content(t_radix_list *begin);
+t_radix_list	*ft_sort_merge_lists(t_radix_list *negative, t_radix_list *positive);
+char	*ft_revstr(char *str);
+int	ft_find_maxsize_str(t_radix_list *lst);
+int	ft_max(int	*tab, int len);
 #endif

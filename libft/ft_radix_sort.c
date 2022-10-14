@@ -20,7 +20,8 @@ t_radix_list	*ft_radix_sort(int *ar, int size)
 	unsorted = NULL;
 	unsorted = ft_radix_new_list(unsorted, ar, size);
 	radix = ft_divide_list(unsorted);
-
+	unsorted = ft_sort_merge_lists(radix.negative, radix.positive);
+	return (NULL);
 }
 
 
