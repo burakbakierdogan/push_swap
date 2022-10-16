@@ -15,16 +15,17 @@
 
 int	main(int ac, char *argv[])
 {
-	t_stack	*a;
-	t_stack	*hold;
-
+	t_error a;
 	a = ft_error_management(ac, argv);
-	hold = a;
-	while (a)
+	int i = 0;
+	int size;
+	size = a.size;
+	while (i <= size)
 	{
-		ft_printf("%d ", a -> nbr);
-		a = a -> next;
+		ft_printf("%d\n", a.ptr[i++]);
 	}
-	ft_printf("\n");
-	ft_free_stack(hold);
+	free(a.ptr);
+	return(0);
+
+
 }

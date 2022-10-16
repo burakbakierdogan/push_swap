@@ -91,7 +91,7 @@ int	*ft_convert(char **str)
 		return (NULL);
 	i = -1;
 	while (str[++i])
-		ptr[i] = ft_atoi(str[i]);
+		ptr[i] = ft_atoi_for_push_swap(str[i]);
 	while (++j < i)
 		ft_check_numbers(ptr, ptr[j], str[j]);
 	i = 0;
@@ -101,10 +101,11 @@ int	*ft_convert(char **str)
 	return (ptr);
 }
 
-int	*ft_error_management(int size, char *argv[])
+t_error	ft_error_management(int size, char *argv[])
 {
 	int		*nbr_arr;
 	char	**str;
+	t_error ret;
 
 	if (size == 2)
 		str = ft_split(argv[1], ' ');
@@ -116,4 +117,7 @@ int	*ft_error_management(int size, char *argv[])
 	while (str[size])
 		size++;
 	nbr_arr = ft_convert(str);
+	ret.ptr = nbr_arr;
+	ret.size = size - 1;
+	return (ret);
 }
