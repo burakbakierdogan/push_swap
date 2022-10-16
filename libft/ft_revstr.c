@@ -14,20 +14,24 @@
 
 char	*ft_revstr(char *str)
 {
-	char	temp[ft_strlen(str)];
-	int		len;
-	int		i;
-	int		len2;
+	char		*temp;
+	size_t		len;
+	size_t		i;
+	size_t		len2;
 
 	i = 0;
 	len = ft_strlen(str) - 1;
 	len2 = len;
+	temp = (char *) malloc ((len + 1) * sizeof(char));
+	if (!temp)
+		return (NULL);
 	while (i <= len2)
 		temp[i++] = str[len--];
 	i = -1;
 	while (++i <= len2)
 		str[i] = temp[i];
 	str[i] = '\0';
+	free(temp);
 	return (str);
 }
 /*

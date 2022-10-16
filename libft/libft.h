@@ -6,7 +6,7 @@
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:12:41 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/14 04:49:36 by berdogan         ###   ########.fr       */
+/*   Updated: 2022/10/16 02:03:26 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,6 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
-
-typedef struct s_radix_list
-{
-	char				*nbr;
-	struct s_radix_list	*next;
-	char				*index;
-}	t_radix_list;
-
-typedef struct s_radix
-{
-	t_radix_list *positive;
-	t_radix_list *negative;
-}	t_total_list;
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
@@ -103,6 +90,7 @@ t_gnl	ft_seperate(char *str, int j);
 int		ft_is_capital(char c);
 int		ft_is_space(int c);
 int		ft_atoi_base(char *str, int base);
+int		ft_atoi_for_push_swap(const char *nptr);
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
@@ -112,16 +100,7 @@ void	ft_lstdelone(t_list *lst, void (*del) (void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del) (void *));
-t_radix_list	*ft_radix_sort(int *ar, int size);
 char	*ft_itoa_base_v2(int nbr, int base, char format);
-t_radix_list	*ft_radix_new_node(char *str);
-t_radix_list	*ft_radix_new_list(t_radix_list *begin, int *ar, int size);
-t_radix_list	*ft_del_node(t_radix_list *begin);
-t_total_list	ft_divide_list(t_radix_list *unsorted);
-void	ft_free_only_list(t_radix_list *unsorted);
-void	ft_free_with_content(t_radix_list *begin);
-t_radix_list	*ft_sort_merge_lists(t_radix_list *negative, t_radix_list *positive);
 char	*ft_revstr(char *str);
-int	ft_find_maxsize_str(t_radix_list *lst);
-int	ft_max(int	*tab, int len);
+int		ft_max(int	*tab, int len);
 #endif
