@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PUSH_SWAP_H
+#ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
 typedef struct s_error
@@ -20,4 +20,4 @@ typedef struct s_error
 }	t_error;
 
 t_error	ft_error_management(int size, char *argv[]);
-# endif
+#endif

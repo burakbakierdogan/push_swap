@@ -56,7 +56,7 @@ static	void	ft_forbidden(char *str)
 	}
 }
 
-static	char **ft_get_args(int size, char **argv)
+static	char	**ft_get_args(int size, char **argv)
 {
 	char	**str;
 	int		i;
@@ -76,7 +76,7 @@ static	char **ft_get_args(int size, char **argv)
 	return (str);
 }
 
-int	*ft_convert(char **str)
+static	int	*ft_convert(char **str)
 {
 	int	i;
 	int	*ptr;
@@ -95,9 +95,9 @@ int	*ft_convert(char **str)
 	while (++j < i)
 		ft_check_numbers(ptr, ptr[j], str[j]);
 	i = 0;
-	while(str[i])
-		free(str[i++]);
-	free(str);
+	while (str[i])
+		free (str[i++]);
+	free (str);
 	return (ptr);
 }
 
@@ -105,7 +105,7 @@ t_error	ft_error_management(int size, char *argv[])
 {
 	int		*nbr_arr;
 	char	**str;
-	t_error ret;
+	t_error	ret;
 
 	if (size == 2)
 		str = ft_split(argv[1], ' ');

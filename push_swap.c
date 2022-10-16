@@ -15,17 +15,8 @@
 
 int	main(int ac, char *argv[])
 {
-	t_error a;
-	a = ft_error_management(ac, argv);
-	int i = 0;
-	int size;
-	size = a.size;
-	while (i <= size)
-	{
-		ft_printf("%d\n", a.ptr[i++]);
-	}
-	free(a.ptr);
-	return(0);
+	t_error	a;
 
-
+	a = ft_error_management (ac, argv);
+	return (0);
 }
