@@ -50,3 +50,55 @@ t_stack	*ft_create_stack_a(int *ptr, int size)
 	free(ptr);
 	return (hold);
 }
+
+t_stack	*ft_clone_a(t_stack	*a)
+{
+	t_stack	*begin;
+	t_stack	*hold;
+
+	begin = NULL;
+	while (a)
+	{
+		if (!begin)
+		{
+			begin = ft_new_node (NULL, ft_strdup(a -> s_nbr));
+			hold = begin;
+			a = a -> next;
+		}
+		else
+		{
+			begin -> next = ft_new_node (begin, ft_strdup(a -> s_nbr));
+			begin = begin -> next;
+			a = a -> next;
+		}
+	}
+	return (hold);
+}
+
+void	ft_free_stack_and_contents(t_stack *begin)
+{
+	t_stack	*hold;
+
+	while (begin)
+	{
+		hold = begin -> next;
+		if (begin -> s_nbr)
+			free(begin -> s_nbr);
+		if (begin -> i_nbr)
+			free (begin -> i_nbr);
+		free(begin);
+		begin = hold;
+	}
+}
+
+void	ft_free_only_list(t_stack *begin)
+{
+	t_stack	*hold;
+	
+	while (begin)
+	{
+		hold = begin -> next;
+		free(begin);
+		begin = hold;
+	}
+}

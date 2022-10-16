@@ -6,12 +6,12 @@
 #    By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 16:24:52 by berdogan          #+#    #+#              #
-#    Updated: 2022/10/16 02:14:46 by berdogan         ###   ########.fr        #
+#    Updated: 2022/10/16 21:53:05 by berdogan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		:= clang
-CFLAGS	:= -Wall -Werror -Wextra
+CFLAGS	:= -Wall -Werror -Wextra -g
 RM		:= /bin/rm -f
 NAME	:= libft.a
 INCLUDE	:= libft.h

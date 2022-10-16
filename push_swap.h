@@ -27,7 +27,18 @@ typedef struct s_error
 	int	*ptr;
 }	t_error;
 
+typedef struct s_signed_list
+{
+	t_stack	*negative;
+	t_stack	*positive;
+}	t_signed_list;
+
 t_error	ft_error_management(int size, char *argv[]);
 t_stack	*ft_create_stack_a(int *ptr, int size);
 t_stack	*ft_new_node(t_stack *prev, char *content);
+t_stack	*ft_clone_a(t_stack	*a);
+void	ft_free_stack_and_contents(t_stack *begin);
+t_stack	*ft_radix_sort(t_stack *begin);
+void	ft_free_only_list(t_stack *begin);
+t_signed_list	*ft_divide_by_sign(t_stack	*begin);
 #endif
