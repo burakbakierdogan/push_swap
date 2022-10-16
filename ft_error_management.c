@@ -23,7 +23,7 @@ static	void	ft_check_numbers(int *ptr, int nbr, char *str)
 	if ((nbr == 0 || nbr == -1) && ft_strlen(str) > 3)
 	{
 		ft_printf("Error\n");
-		exit(1);
+		exit(0);
 	}
 	while (ptr[i])
 	{
@@ -33,7 +33,7 @@ static	void	ft_check_numbers(int *ptr, int nbr, char *str)
 		if (duplicate > 1)
 		{
 			ft_printf("Error\n");
-			exit(1);
+			exit(0);
 		}
 	}
 }
@@ -45,6 +45,11 @@ static	void	ft_forbidden(char *str)
 	i = 0;
 	if (str[i] == '+' || str[i] == '-')
 		i++;
+	if (!str[i])
+	{
+		ft_printf("Error\n");
+		exit(0);
+	}
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]) && !ft_is_space(str[i]))

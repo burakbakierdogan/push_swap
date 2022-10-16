@@ -15,8 +15,29 @@
 
 int	main(int ac, char *argv[])
 {
-	t_error	a;
+	t_error	ptr;
+	t_stack	*a;
+	t_stack	*hold;
 
-	a = ft_error_management (ac, argv);
+
+	ptr = ft_error_management (ac, argv);
+	a = ft_create_stack_a(ptr.ptr, ptr.size);
+	int i = 1;
+	hold = a;
+	while (a -> next)
+	{
+		ft_printf("%d - %s\n",i++, a -> s_nbr);
+		a = a -> next;
+		if (!a -> next)
+			ft_printf("%d - %s\n", i, a -> s_nbr);
+	}
+	ft_printf("----------\n");
+	while (a)
+	{
+		hold = a -> prev;
+		free(a -> s_nbr);
+		free(a);
+		a = hold;
+	}
 	return (0);
 }
