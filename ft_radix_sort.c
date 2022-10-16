@@ -23,3 +23,13 @@ t_stack	*ft_radix_sort(t_stack *begin)
 	free(box);
 	return (NULL);
 }
+/*
+------free list-------------------
+created negative and positive list;
+also created one box variable with the type of t_signed_list.
+begin
+box
+and box -> negative
+	box -> positive
+	lists are on the heap waiting.
+*/
