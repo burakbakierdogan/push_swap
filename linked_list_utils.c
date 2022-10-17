@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   linked_list_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 13:20:45 by berdogan          #+#    #+#             */
-/*   Updated: 2022/08/26 19:42:50 by berdogan         ###   ########.fr       */
+/*   Created: 2022/10/17 02:55:24 by berdogan          #+#    #+#             */
+/*   Updated: 2022/10/17 02:55:24 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include "libft/libft.h"
+#include "push_swap.h"
 
-int	main(int ac, char *argv[])
+t_stack	*ft_new_node(t_stack *prev, char *content)
 {
-	t_error	ptr;
-	t_stack	*a;
-	t_stack	*a_clone;
+	t_stack	*new;
 
-	ptr = ft_error_management (ac, argv);
-	a = ft_create_stack_a(ptr.ptr, ptr.size);
-	if (ptr.size < 1)
-		exit(0);
-	a_clone	= ft_clone_a(a);
-	a_clone = ft_radix_sort(a_clone);
-	return (0);
+	new = malloc (sizeof(t_stack));
+	if (!new)
+		return (NULL);
+	new -> prev = prev;
+	new -> next = NULL;
+	new -> s_nbr = content;
+	return (new);
+}
+
+int	ft_list_size(t_stack *lst)
+{
+	int	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst -> next;
+		i++;
+	}
+	return (i);
 }

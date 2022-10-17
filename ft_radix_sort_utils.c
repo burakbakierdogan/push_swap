@@ -13,6 +13,20 @@
 #include "libft/libft.h"
 #include "push_swap.h"
 
+void	ft_reverse(t_stack *positive, t_stack *negative)
+{
+	while (negative)
+	{
+		ft_revstr(negative -> s_nbr);
+		negative = negative -> next;
+	}
+	while (positive)
+	{
+		ft_revstr(positive -> s_nbr);
+		positive = positive -> next;
+	}
+}
+
 static	t_stack	*ft_new_signed_stack(t_stack *sign, char *content)
 {
 	if (!sign)

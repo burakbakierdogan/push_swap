@@ -41,4 +41,6 @@ void	ft_free_stack_and_contents(t_stack *begin);
 t_stack	*ft_radix_sort(t_stack *begin);
 void	ft_free_only_list(t_stack *begin);
 t_signed_list	*ft_divide_by_sign(t_stack	*begin);
+void	ft_reverse(t_stack *positive, t_stack *negative);
+int	ft_list_size(t_stack *lst);
 #endif

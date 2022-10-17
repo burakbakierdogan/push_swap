@@ -13,19 +13,6 @@
 #include "libft/libft.h"
 #include "push_swap.h"
 
-t_stack	*ft_new_node(t_stack *prev, char *content)
-{
-	t_stack	*new;
-
-	new = malloc (sizeof(t_stack));
-	if (!new)
-		return (NULL);
-	new -> prev = prev;
-	new -> next = NULL;
-	new -> s_nbr = content;
-	return (new);
-}
-
 t_stack	*ft_create_stack_a(int *ptr, int size)
 {
 	int	i;
@@ -94,7 +81,7 @@ void	ft_free_stack_and_contents(t_stack *begin)
 void	ft_free_only_list(t_stack *begin)
 {
 	t_stack	*hold;
-	
+
 	while (begin)
 	{
 		hold = begin -> next;

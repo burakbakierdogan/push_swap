@@ -14,7 +14,7 @@ NAME := push_swap
 CC := clang
 CFLAGS := -Wall -Werror -Wextra -o
 SRCS := push_swap.c push_swap_utils.c ft_error_management.c ft_radix_sort.c \
-		ft_radix_sort_utils.c
+		ft_radix_sort_utils.c linked_list_utils.c
 
 all: mlibft $(NAME)
 
