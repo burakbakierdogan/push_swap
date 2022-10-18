@@ -39,11 +39,11 @@ static	t_stack	*ft_new_signed(t_stack *sign, char *content)
 	return (sign);
 }
 
-t_signed_list	*ft_divide_by_sign(t_stack	*begin)
+t_sig	*ft_divide_by_sign(t_stack	*begin)
 {
-	t_signed_list	*box;
+	t_sig	*box;
 
-	box = malloc (sizeof(t_signed_list));
+	box = malloc (sizeof(t_sig));
 	box -> negative = NULL;
 	box -> positive = NULL;
 	while (begin)

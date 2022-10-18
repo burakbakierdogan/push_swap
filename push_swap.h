@@ -15,11 +15,11 @@
 
 typedef struct s_stack
 {
-	struct	s_stack	*next;
-	struct	s_stack	*prev;
-	int		nbr;
-	char	*s_nbr;
-	char	*i_nbr;
+	struct s_stack	*next;
+	struct s_stack	*prev;
+	int				nbr;
+	char			*s_nbr;
+	char			*i_nbr;
 }	t_stack;
 typedef struct s_error
 {
@@ -31,7 +31,7 @@ typedef struct s_signed_list
 {
 	t_stack	*negative;
 	t_stack	*positive;
-}	t_signed_list;
+}	t_sig;
 
 t_error	ft_error_management(int size, char *argv[]);
 t_stack	*ft_create_stack_a(int *ptr, int size);
@@ -40,9 +40,11 @@ t_stack	*ft_clone_a(t_stack	*a);
 void	ft_free_stack_and_contents(t_stack *begin);
 t_stack	*ft_radix_sort(t_stack *begin);
 void	ft_free_only_list(t_stack *begin);
-t_signed_list	*ft_divide_by_sign(t_stack	*begin);
+t_sig	*ft_divide_by_sign(t_stack	*begin);
 void	ft_reverse(t_stack *positive, t_stack *negative);
-int	ft_list_size(t_stack *lst);
+int		ft_list_size(t_stack *lst);
 t_stack	*ft_merge_lists(t_stack *zero, t_stack *one);
 t_stack	*ft_push(t_stack *lst, char *content);
+t_stack	*ft_sort(t_stack *sign);
+t_stack	*ft_reverse_list(t_stack *negative);
 #endif

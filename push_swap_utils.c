@@ -15,7 +15,7 @@
 
 t_stack	*ft_create_stack_a(int *ptr, int size)
 {
-	int	i;
+	int		i;
 	t_stack	*begin;
 	t_stack	*hold;
 
@@ -30,7 +30,8 @@ t_stack	*ft_create_stack_a(int *ptr, int size)
 		}
 		else
 		{
-			begin -> next = ft_new_node (begin, ft_itoa_base_v2 (ptr[i++], 2, 'X'));
+			begin -> next = ft_new_node
+				(begin, ft_itoa_base_v2 (ptr[i++], 2, 'X'));
 			begin = begin -> next;
 		}
 	}
