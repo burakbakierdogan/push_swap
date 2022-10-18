@@ -45,37 +45,6 @@ static	int	ft_max_str_len(t_stack	*sign)
 	return (i);
 }
 
-static	t_stack	*ft_push(t_stack *lst, char *content)
-{
-	t_stack	*hold;
-
-	if (!lst)
-	{
-		lst = ft_new_node (NULL, content);
-		return (lst);
-	}
-	hold = lst;
-	while (lst -> next)
-		lst = lst -> next;
-	lst -> next = ft_new_node(lst, content);
-	return (hold);
-}
-
-static	t_stack	*ft_merge(t_stack *zero, t_stack *one)
-{
-	t_stack	*hold;
-
-	hold = zero;
-	if (!zero)
-		return (one);
-	if (!one)
-		return (zero);
-	while (zero -> next)
-		zero = zero -> next;
-	zero -> next = one;
-	return (hold);
-}
-
 static	t_stack	*ft_sort(t_stack *sign)
 {
 	int	i;
@@ -105,7 +74,7 @@ static	t_stack	*ft_sort(t_stack *sign)
 		}
 		i++;
 		ft_free_only_list(hold);
-		sign = ft_merge(zero, one);
+		sign = ft_merge_lists(zero, one);
 		hold = sign;
 		zero = NULL;
 		one  = NULL;
@@ -150,7 +119,7 @@ t_stack	*ft_radix_sort(t_stack *begin)
 	box -> negative = ft_sort (box -> negative);
 	box -> positive = ft_sort (box -> positive);
 	box -> negative = ft_reverse_list(box -> negative);
-	merged = ft_merge(box ->negative, box -> positive);
+	merged = ft_merge_lists(box ->negative, box -> positive);
 	ft_reverse(NULL, merged);
 	/*while (merged)
 	{

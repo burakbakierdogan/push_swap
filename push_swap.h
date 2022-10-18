@@ -43,4 +43,6 @@ void	ft_free_only_list(t_stack *begin);
 t_signed_list	*ft_divide_by_sign(t_stack	*begin);
 void	ft_reverse(t_stack *positive, t_stack *negative);
 int	ft_list_size(t_stack *lst);
+t_stack	*ft_merge_lists(t_stack *zero, t_stack *one);
+t_stack	*ft_push(t_stack *lst, char *content);
 #endif

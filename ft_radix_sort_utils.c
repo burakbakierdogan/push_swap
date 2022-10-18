@@ -17,17 +17,17 @@ void	ft_reverse(t_stack *positive, t_stack *negative)
 {
 	while (negative)
 	{
-		ft_revstr(negative -> s_nbr);
+		ft_revstr (negative -> s_nbr);
 		negative = negative -> next;
 	}
 	while (positive)
 	{
-		ft_revstr(positive -> s_nbr);
+		ft_revstr (positive -> s_nbr);
 		positive = positive -> next;
 	}
 }
 
-static	t_stack	*ft_new_signed_stack(t_stack *sign, char *content)
+static	t_stack	*ft_new_signed(t_stack *sign, char *content)
 {
 	if (!sign)
 	{
@@ -49,9 +49,9 @@ t_signed_list	*ft_divide_by_sign(t_stack	*begin)
 	while (begin)
 	{
 		if (begin -> s_nbr[0] == '-')
-			box -> negative = ft_new_signed_stack(box -> negative, begin -> s_nbr);
+			box -> negative = ft_new_signed(box -> negative, begin -> s_nbr);
 		else
-			box -> positive = ft_new_signed_stack(box -> positive, begin -> s_nbr);
+			box -> positive = ft_new_signed(box -> positive, begin -> s_nbr);
 		begin = begin -> next;
 	}
 	if (box -> negative)
@@ -65,4 +65,35 @@ t_signed_list	*ft_divide_by_sign(t_stack	*begin)
 			box -> positive = box -> positive -> prev;
 	}
 	return (box);
+}
+
+t_stack	*ft_merge_lists(t_stack *zero, t_stack *one)
+{
+	t_stack	*hold;
+
+	hold = zero;
+	if (!zero)
+		return (one);
+	if (!one)
+		return (zero);
+	while (zero -> next)
+		zero = zero -> next;
+	zero -> next = one;
+	return (hold);
+}
+
+t_stack	*ft_push(t_stack *lst, char *content)
+{
+	t_stack	*hold;
+
+	if (!lst)
+	{
+		lst = ft_new_node (NULL, content);
+		return (lst);
+	}
+	hold = lst;
+	while (lst -> next)
+		lst = lst -> next;
+	lst -> next = ft_new_node(lst, content);
+	return (hold);
 }
