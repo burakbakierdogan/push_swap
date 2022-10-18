@@ -16,9 +16,9 @@
 int	main(int ac, char *argv[])
 {
 	t_error	ptr;
-	t_stack	*a;
-	t_stack	*a_clone;
-	t_stack	*hold;
+	t_lst	*a;
+	t_lst	*a_clone;
+	t_lst	*hold;
 
 	ptr = ft_error_management (ac, argv);
 	a = ft_create_stack_a(ptr.ptr, ptr.size);

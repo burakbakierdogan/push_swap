@@ -23,7 +23,7 @@ static	int	ft_strlen2(char *str)
 	return (i);
 }
 
-static	int	ft_max_str_len(t_stack	*sign)
+static	int	ft_max_str_len(t_lst	*sign)
 {
 	int	*ptr;
 	int	len;
@@ -45,11 +45,11 @@ static	int	ft_max_str_len(t_stack	*sign)
 	return (i);
 }
 
-static	t_stack	*ft_binary_sort(t_stack *sign, int i)
+static	t_lst	*ft_binary_sort(t_lst *sign, int i)
 {
-	t_stack	*zero;
-	t_stack	*one;
-	t_stack	*hold;
+	t_lst	*zero;
+	t_lst	*one;
+	t_lst	*hold;
 
 	zero = NULL;
 	one = NULL;
@@ -69,7 +69,7 @@ static	t_stack	*ft_binary_sort(t_stack *sign, int i)
 	return (sign);
 }
 
-t_stack	*ft_sort(t_stack *sign)
+t_lst	*ft_sort(t_lst *sign)
 {
 	int	i;
 	int	max;
@@ -83,11 +83,11 @@ t_stack	*ft_sort(t_stack *sign)
 	return (sign);
 }
 
-t_stack	*ft_reverse_list(t_stack *negative)
+t_lst	*ft_reverse_list(t_lst *negative)
 {
 	char	**str;
 	int		len;
-	t_stack	*hold;
+	t_lst	*hold;
 
 	hold = negative;
 	len = ft_list_size(negative);

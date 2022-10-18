@@ -13,11 +13,11 @@
 #include "libft/libft.h"
 #include "push_swap.h"
 
-t_stack	*ft_create_stack_a(int *ptr, int size)
+t_lst	*ft_create_stack_a(int *ptr, int size)
 {
 	int		i;
-	t_stack	*begin;
-	t_stack	*hold;
+	t_lst	*begin;
+	t_lst	*hold;
 
 	i = 0;
 	begin = NULL;
@@ -39,10 +39,10 @@ t_stack	*ft_create_stack_a(int *ptr, int size)
 	return (hold);
 }
 
-t_stack	*ft_clone_a(t_stack	*a)
+t_lst	*ft_clone_a(t_lst	*a)
 {
-	t_stack	*begin;
-	t_stack	*hold;
+	t_lst	*begin;
+	t_lst	*hold;
 
 	begin = NULL;
 	while (a)
@@ -63,9 +63,9 @@ t_stack	*ft_clone_a(t_stack	*a)
 	return (hold);
 }
 
-void	ft_free_stack_and_contents(t_stack *begin)
+void	ft_free_stack_and_contents(t_lst *begin)
 {
-	t_stack	*hold;
+	t_lst	*hold;
 
 	while (begin)
 	{
@@ -79,9 +79,9 @@ void	ft_free_stack_and_contents(t_stack *begin)
 	}
 }
 
-void	ft_free_only_list(t_stack *begin)
+void	ft_free_only_list(t_lst *begin)
 {
-	t_stack	*hold;
+	t_lst	*hold;
 
 	while (begin)
 	{

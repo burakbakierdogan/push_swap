@@ -13,11 +13,11 @@
 #include "libft/libft.h"
 #include "push_swap.h"
 
-t_stack	*ft_new_node(t_stack *prev, char *content)
+t_lst	*ft_new_node(t_lst *prev, char *content)
 {
-	t_stack	*new;
+	t_lst	*new;
 
-	new = malloc (sizeof(t_stack));
+	new = malloc (sizeof(t_lst));
 	if (!new)
 		return (NULL);
 	new -> prev = prev;
@@ -26,7 +26,7 @@ t_stack	*ft_new_node(t_stack *prev, char *content)
 	return (new);
 }
 
-int	ft_list_size(t_stack *lst)
+int	ft_list_size(t_lst *lst)
 {
 	int	i;
 

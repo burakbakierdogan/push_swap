@@ -13,10 +13,10 @@
 #include "libft/libft.h"
 #include "push_swap.h"
 
-t_stack	*ft_radix_sort(t_stack *begin)
+t_lst	*ft_radix_sort(t_lst *begin)
 {
 	t_sig	*box;
-	t_stack			*merged;
+	t_lst			*merged;
 
 	box = ft_divide_by_sign (begin);
 	ft_free_only_list (begin);

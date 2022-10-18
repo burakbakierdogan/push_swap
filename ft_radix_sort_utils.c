@@ -13,7 +13,7 @@
 #include "libft/libft.h"
 #include "push_swap.h"
 
-void	ft_reverse(t_stack *positive, t_stack *negative)
+void	ft_reverse(t_lst *positive, t_lst *negative)
 {
 	while (negative)
 	{
@@ -27,7 +27,7 @@ void	ft_reverse(t_stack *positive, t_stack *negative)
 	}
 }
 
-static	t_stack	*ft_new_signed(t_stack *sign, char *content)
+static	t_lst	*ft_new_signed(t_lst *sign, char *content)
 {
 	if (!sign)
 	{
@@ -39,7 +39,7 @@ static	t_stack	*ft_new_signed(t_stack *sign, char *content)
 	return (sign);
 }
 
-t_sig	*ft_divide_by_sign(t_stack	*begin)
+t_sig	*ft_divide_by_sign(t_lst	*begin)
 {
 	t_sig	*box;
 
@@ -67,9 +67,9 @@ t_sig	*ft_divide_by_sign(t_stack	*begin)
 	return (box);
 }
 
-t_stack	*ft_merge_lists(t_stack *zero, t_stack *one)
+t_lst	*ft_merge_lists(t_lst *zero, t_lst *one)
 {
-	t_stack	*hold;
+	t_lst	*hold;
 
 	hold = zero;
 	if (!zero)
@@ -82,9 +82,9 @@ t_stack	*ft_merge_lists(t_stack *zero, t_stack *one)
 	return (hold);
 }
 
-t_stack	*ft_push(t_stack *lst, char *content)
+t_lst	*ft_push(t_lst *lst, char *content)
 {
-	t_stack	*hold;
+	t_lst	*hold;
 
 	if (!lst)
 	{
