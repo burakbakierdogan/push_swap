@@ -16,7 +16,7 @@
 t_lst	*ft_radix_sort(t_lst *begin)
 {
 	t_sig	*box;
-	t_lst			*merged;
+	t_lst	*merged;
 
 	box = ft_divide_by_sign (begin);
 	ft_free_only_list (begin);
