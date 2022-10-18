@@ -25,5 +25,7 @@ int	main(int ac, char *argv[])
 		exit(0);
 	a_clone	= ft_clone_a(a);
 	a_clone = ft_radix_sort(a_clone);
+	ft_free_stack_and_contents(a_clone);
+	ft_free_stack_and_contents(a);
 	return (0);
 }

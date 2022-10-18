@@ -104,26 +104,63 @@ static	t_stack	*ft_sort(t_stack *sign)
 			sign = sign -> next;
 		}
 		i++;
-		//ft_free_only_list(hold);
+		ft_free_only_list(hold);
 		sign = ft_merge(zero, one);
-		//hold = sign;
+		hold = sign;
 		zero = NULL;
 		one  = NULL;
 	}
 	return (sign);
 }
 
+static	t_stack	*ft_reverse_list(t_stack *negative)
+{
+	char	**str;
+	int		len;
+	t_stack	*hold;
+
+	hold = negative;
+	len = ft_list_size(negative);
+	str = (char **) malloc ((len + 1) * sizeof(char *));
+	if (!str)
+		return (NULL);
+	len = 0;
+	while (negative)
+	{
+		str[len++] = negative -> s_nbr;
+		negative = negative -> next;
+	}
+	negative = hold;
+	while (negative)
+	{
+		negative -> s_nbr = str[--len];
+		negative = negative -> next;
+	}
+	free(str);
+	return (hold);
+}
+
 t_stack	*ft_radix_sort(t_stack *begin)
 {
 	t_signed_list	*box;
+	t_stack			*merged;
 
 	box = ft_divide_by_sign(begin);
 	ft_free_only_list(begin);
 	box -> negative = ft_sort (box -> negative);
 	box -> positive = ft_sort (box -> positive);
+	box -> negative = ft_reverse_list(box -> negative);
+	merged = ft_merge(box ->negative, box -> positive);
+	/*while (merged)
+	{
+		ft_printf("%d\n", ft_atoi_base(ft_revstr(merged -> s_nbr), 2));
+		merged = merged -> next;
+	}
+	*/
+	/*
 	while (box ->negative)
 	{
-		ft_printf("%s\n", ft_revstr(box -> negative -> s_nbr));
+		ft_printf("%d\n", ft_atoi_base(ft_revstr(box -> negative -> s_nbr), 2));
 		box -> negative = box -> negative -> next;
 	}
 	while (box ->positive)
@@ -131,8 +168,9 @@ t_stack	*ft_radix_sort(t_stack *begin)
 		ft_printf("%d\n", ft_atoi_base(ft_revstr(box -> positive -> s_nbr), 2));
 		box -> positive = box -> positive -> next;
 	}
+	*/
 	free(box);
-	return (NULL);
+	return (merged);
 }
 /*
 ------free list-------------------
