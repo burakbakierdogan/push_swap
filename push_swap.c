@@ -18,6 +18,7 @@ int	main(int ac, char *argv[])
 	t_error	ptr;
 	t_stack	*a;
 	t_stack	*a_clone;
+	t_stack	*hold;
 
 	ptr = ft_error_management (ac, argv);
 	a = ft_create_stack_a(ptr.ptr, ptr.size);
@@ -25,6 +26,12 @@ int	main(int ac, char *argv[])
 		exit(0);
 	a_clone	= ft_clone_a(a);
 	a_clone = ft_radix_sort(a_clone);
+	hold = a_clone;
+	while (hold)
+	{
+		ft_printf("%d\n", ft_atoi_base(hold ->s_nbr,2));
+		hold = hold -> next;
+	}
 	ft_free_stack_and_contents(a_clone);
 	ft_free_stack_and_contents(a);
 	return (0);

@@ -151,6 +151,7 @@ t_stack	*ft_radix_sort(t_stack *begin)
 	box -> positive = ft_sort (box -> positive);
 	box -> negative = ft_reverse_list(box -> negative);
 	merged = ft_merge(box ->negative, box -> positive);
+	ft_reverse(NULL, merged);
 	/*while (merged)
 	{
 		ft_printf("%d\n", ft_atoi_base(ft_revstr(merged -> s_nbr), 2));
