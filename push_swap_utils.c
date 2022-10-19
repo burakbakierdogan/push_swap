@@ -25,13 +25,14 @@ t_lst	*ft_create_stack_a(int *ptr, int size)
 	{
 		if (!begin)
 		{
-			begin = ft_new_node (NULL, ft_itoa_base_v2 (ptr[i++], 2, 'X'));
+			begin = ft_new_node
+				(NULL, ft_itoa_base_v2 (ptr[i++], 2, 'X'), NULL);
 			hold = begin;
 		}
 		else
 		{
 			begin -> next = ft_new_node
-				(begin, ft_itoa_base_v2 (ptr[i++], 2, 'X'));
+				(begin, ft_itoa_base_v2 (ptr[i++], 2, 'X'), NULL);
 			begin = begin -> next;
 		}
 	}
@@ -49,13 +50,13 @@ t_lst	*ft_clone_a(t_lst	*a)
 	{
 		if (!begin)
 		{
-			begin = ft_new_node (NULL, ft_strdup(a -> s_nbr));
+			begin = ft_new_node (NULL, ft_strdup(a -> s_nbr), NULL);
 			hold = begin;
 			a = a -> next;
 		}
 		else
 		{
-			begin -> next = ft_new_node (begin, ft_strdup(a -> s_nbr));
+			begin -> next = ft_new_node (begin, ft_strdup(a -> s_nbr), NULL);
 			begin = begin -> next;
 			a = a -> next;
 		}
@@ -63,30 +64,56 @@ t_lst	*ft_clone_a(t_lst	*a)
 	return (hold);
 }
 
-void	ft_free_stack_and_contents(t_lst *begin)
+static	char	*ft_reverse_and_fill(char	*str)
 {
-	t_lst	*hold;
+	char	*new;
+	int		i;
+	int		j;
 
+	i = 0;
+	j = ft_strlen(str) - 1;
+	new = (char *) malloc (10 * sizeof(char));
+	if (!new)
+		return (NULL);
+	while (i <= 9)
+		new[i++] = '0';
+	new[i] = '\0';
+	i = 0;
+	while (j >= 0)
+		new[i++] = str[j--];
+	free(str);
+	return (new);
+}
+
+void	ft_get_the_index(t_lst	*begin)
+{
+	int	i;
+
+	i = 0;
 	while (begin)
 	{
-		hold = begin -> next;
-		if (begin -> s_nbr)
-			free(begin -> s_nbr);
-		if (begin -> i_nbr)
-			free (begin -> i_nbr);
-		free(begin);
-		begin = hold;
+		begin -> i_nbr = ft_reverse_and_fill (ft_itoa_base_v2(i++, 2, 'X'));
+		begin = begin -> next;
 	}
 }
 
-void	ft_free_only_list(t_lst *begin)
+void	ft_clone_index(t_lst *a_clone, t_lst *a)
 {
 	t_lst	*hold;
 
-	while (begin)
+	hold = a;
+	while (a_clone)
 	{
-		hold = begin -> next;
-		free(begin);
-		begin = hold;
+		while (a)
+		{
+			if (!ft_strncmp (a_clone -> s_nbr, a -> s_nbr,
+				ft_strlen (a_clone -> s_nbr)))
+			a -> i_nbr = ft_strdup (a_clone -> i_nbr);
+			a = a -> next;
+		}
+		a = hold;
+		a_clone = a_clone -> next;
 	}
 }
+
+

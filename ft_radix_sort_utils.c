@@ -31,10 +31,10 @@ static	t_lst	*ft_new_signed(t_lst *sign, char *content)
 {
 	if (!sign)
 	{
-		sign = ft_new_node (NULL, content);
+		sign = ft_new_node (NULL, content, NULL);
 		return (sign);
 	}
-	sign -> next = ft_new_node(sign, content);
+	sign -> next = ft_new_node(sign, content, NULL);
 	sign = sign -> next;
 	return (sign);
 }
@@ -88,12 +88,12 @@ t_lst	*ft_push(t_lst *lst, char *content)
 
 	if (!lst)
 	{
-		lst = ft_new_node (NULL, content);
+		lst = ft_new_node (NULL, content, NULL);
 		return (lst);
 	}
 	hold = lst;
 	while (lst -> next)
 		lst = lst -> next;
-	lst -> next = ft_new_node(lst, content);
+	lst -> next = ft_new_node(lst, content, NULL);
 	return (hold);
 }
