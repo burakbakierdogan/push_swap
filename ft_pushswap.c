@@ -23,5 +23,7 @@ void	ft_pushswap(t_lst *a_clone, t_lst *a)
 	stack -> a_top = a;
 	stack -> b_top = NULL;
 	size = ft_list_size(a);
-	max_str = ft_max_len(a);
+	max_str = ft_max_len(a, size);
+	ft_printf("max str = %d, size = %d\n", max_str, size);
+	a = a_clone;
 }

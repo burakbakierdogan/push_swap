@@ -13,13 +13,11 @@
 #include "libft/libft.h"
 #include "push_swap.h"
 
-int	ft_max_len(t_lst *a)
+int	ft_max_len(t_lst *a, int len)
 {
 	int	*ptr;
-	int	len;
 	int	i;
 
-	len = ft_list_size (a);
 	ptr = (int *) malloc (sizeof(int) * len);
 	if (!ptr)
 		return (0);

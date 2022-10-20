@@ -59,5 +59,5 @@ void	ft_pushswap(t_lst *a_clone, t_lst *a);
 t_stack	*ft_pb(t_stack *stack);
 t_stack	*ft_pa(t_stack *stack);
 t_stack	*ft_ra(t_stack *stack);
-int		ft_max_len(t_lst *a);
+int		ft_max_len(t_lst *a, int len);
 #endif
