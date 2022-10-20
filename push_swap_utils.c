@@ -120,5 +120,3 @@ void	ft_index_match(t_lst *a_clone, t_lst *a)
 		a_clone = a_clone -> next;
 	}
 }
-
-

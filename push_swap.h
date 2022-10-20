@@ -33,6 +33,12 @@ typedef struct s_signed_list
 	t_lst	*positive;
 }	t_sig;
 
+typedef struct s_stack
+{
+	t_lst	*a_top;
+	t_lst	*b_top;
+}	t_stack;
+
 t_error	ft_error_management(int size, char *argv[]);
 t_lst	*ft_create_stack_a(int *ptr, int size);
 t_lst	*ft_new_node(t_lst *prev, char *content, char *content2);
@@ -49,4 +55,9 @@ t_lst	*ft_sort(t_lst *sign);
 t_lst	*ft_reverse_list(t_lst *negative);
 int		ft_is_sorted(int *ptr, int size);
 void	ft_index_match(t_lst *a_clone, t_lst *a);
+void	ft_pushswap(t_lst *a_clone, t_lst *a);
+t_stack	*ft_pb(t_stack *stack);
+t_stack	*ft_pa(t_stack *stack);
+t_stack	*ft_ra(t_stack *stack);
+int		ft_max_len(t_lst *a);
 #endif

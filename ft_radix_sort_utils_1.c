@@ -6,7 +6,7 @@
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 07:19:35 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/18 07:19:35 by berdogan         ###   ########.fr       */
+/*   Updated: 2022/10/20 06:42:37 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static	int	ft_strlen2(char *str)
 	return (i);
 }
 
-static	int	ft_max_str_len(t_lst	*sign)
+static	int	ft_max_str_len(t_lst *sign)
 {
 	int	*ptr;
 	int	len;

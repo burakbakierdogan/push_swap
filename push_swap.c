@@ -26,6 +26,7 @@ int	main(int ac, char *argv[])
 	a_clone = ft_radix_sort(a_clone);
 	ft_index_match(a_clone, a);
 	hold = a;
+	ft_pushswap(a_clone, a);
 	while (hold)
 	{
 		ft_printf ("sayi = %d  index number = %d  char s_nbr = %s  char i_nbr = %s\n",
