@@ -27,15 +27,16 @@ int	main(int ac, char *argv[])
 	ft_index_match(a_clone, a);
 	hold = a;
 	ft_pushswap(a_clone, a);
-	while (hold)
+	/*while (hold)
 	{
 		ft_printf ("sayi = %d  index number = %d  char s_nbr = %s  char i_nbr = %s\n",
 			ft_atoi_base (hold -> s_nbr, 2), hold ->nbr, hold -> s_nbr, hold -> i_nbr);
 		hold = hold -> next;
 	}
 	ft_printf("\n");
-	ft_free_stack_and_contents(a_clone);
-	ft_free_stack_and_contents(a);
+	*/
+	//ft_free_stack_and_contents(a_clone);
+	//ft_free_stack_and_contents(a);
 	return (0);
 }
 /*

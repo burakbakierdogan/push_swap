@@ -39,6 +39,13 @@ typedef struct s_stack
 	t_lst	*b_top;
 }	t_stack;
 
+typedef struct s_counter
+{
+	int	i;
+	int	j;
+	int	k;
+}	t_counter;
+
 t_error	ft_error_management(int size, char *argv[]);
 t_lst	*ft_create_stack_a(int *ptr, int size);
 t_lst	*ft_new_node(t_lst *prev, char *content, char *content2);
