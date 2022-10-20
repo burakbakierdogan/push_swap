@@ -6,7 +6,7 @@
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 03:09:14 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/08 03:09:14 by berdogan         ###   ########.fr       */
+/*   Updated: 2022/10/20 03:25:27 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct s_signed_list
 
 t_error	ft_error_management(int size, char *argv[]);
 t_lst	*ft_create_stack_a(int *ptr, int size);
-t_lst	*ft_new_node(t_lst *prev, char *content);
+t_lst	*ft_new_node(t_lst *prev, char *content, char *content2);
 t_lst	*ft_clone_a(t_lst	*a);
 void	ft_free_stack_and_contents(t_lst *begin);
 t_lst	*ft_radix_sort(t_lst *begin);
@@ -47,4 +47,6 @@ t_lst	*ft_merge_lists(t_lst *zero, t_lst *one);
 t_lst	*ft_push(t_lst *lst, char *content);
 t_lst	*ft_sort(t_lst *sign);
 t_lst	*ft_reverse_list(t_lst *negative);
+int		ft_is_sorted(int *ptr, int size);
+void	ft_index_match(t_lst *a_clone, t_lst *a);
 #endif

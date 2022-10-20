@@ -6,14 +6,14 @@
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 01:46:53 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/09 01:46:53 by berdogan         ###   ########.fr       */
+/*   Updated: 2022/10/20 03:16:35 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
 
-static	void	ft_check_numbers(int *ptr, int nbr, char *str)
+static	void	ft_check_numbers(int *ptr, int nbr, char *str, int k)
 {
 	int	i;
 	int	duplicate;
@@ -25,7 +25,7 @@ static	void	ft_check_numbers(int *ptr, int nbr, char *str)
 		ft_printf("Error\n");
 		exit(0);
 	}
-	while (ptr[i])
+	while (i <= k)
 	{
 		if (ptr[i] == nbr)
 			duplicate++;
@@ -86,19 +86,20 @@ static	int	*ft_convert(char **str)
 	int	i;
 	int	*ptr;
 	int	j;
+	int	k;
 
-	i = 0;
+	i = -1;
 	j = -1;
-	while (str[i])
-		ft_forbidden(str[i++]);
-	ptr = (int *) malloc (sizeof(int) * (i));
+	k = 0;
+	while (str[k])
+		ft_forbidden(str[k++]);
+	ptr = (int *) malloc (sizeof(int) * (k));
 	if (!ptr)
 		return (NULL);
-	i = -1;
 	while (str[++i])
 		ptr[i] = ft_atoi_for_push_swap(str[i]);
 	while (++j < i)
-		ft_check_numbers(ptr, ptr[j], str[j]);
+		ft_check_numbers(ptr, ptr[j], str[j], k - 1);
 	i = 0;
 	while (str[i])
 		free (str[i++]);
@@ -123,6 +124,11 @@ t_error	ft_error_management(int size, char *argv[])
 		size++;
 	nbr_arr = ft_convert(str);
 	ret.ptr = nbr_arr;
+	if (ft_is_sorted(nbr_arr, size - 1))
+	{
+		free (nbr_arr);
+		exit (0);
+	}
 	ret.size = size - 1;
 	return (ret);
 }

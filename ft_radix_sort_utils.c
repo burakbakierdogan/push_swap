@@ -6,7 +6,7 @@
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 09:26:08 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/16 09:26:08 by berdogan         ###   ########.fr       */
+/*   Updated: 2022/10/19 19:39:55 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ static	t_lst	*ft_new_signed(t_lst *sign, char *content)
 {
 	if (!sign)
 	{
-		sign = ft_new_node (NULL, content);
+		sign = ft_new_node (NULL, content, NULL);
 		return (sign);
 	}
-	sign -> next = ft_new_node(sign, content);
+	sign -> next = ft_new_node(sign, content, NULL);
 	sign = sign -> next;
 	return (sign);
 }
@@ -88,12 +88,12 @@ t_lst	*ft_push(t_lst *lst, char *content)
 
 	if (!lst)
 	{
-		lst = ft_new_node (NULL, content);
+		lst = ft_new_node (NULL, content, NULL);
 		return (lst);
 	}
 	hold = lst;
 	while (lst -> next)
 		lst = lst -> next;
-	lst -> next = ft_new_node(lst, content);
+	lst -> next = ft_new_node(lst, content, NULL);
 	return (hold);
 }
