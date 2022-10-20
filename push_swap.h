@@ -18,6 +18,7 @@ typedef struct s_lst
 	struct s_lst	*next;
 	struct s_lst	*prev;
 	char			*s_nbr;
+	int				nbr;
 	char			*i_nbr;
 }	t_lst;
 typedef struct s_error
@@ -46,11 +47,6 @@ t_lst	*ft_merge_lists(t_lst *zero, t_lst *one);
 t_lst	*ft_push(t_lst *lst, char *content);
 t_lst	*ft_sort(t_lst *sign);
 t_lst	*ft_reverse_list(t_lst *negative);
-<<<<<<< HEAD
 int		ft_is_sorted(int *ptr, int size);
 void	ft_index_match(t_lst *a_clone, t_lst *a);
-=======
-void	ft_get_the_index(t_lst	*begin);
-void	ft_clone_index(t_lst *a_clone, t_lst *a);
->>>>>>> e8b951210def65d43625baf5967a22be8eeb384e
 #endif
