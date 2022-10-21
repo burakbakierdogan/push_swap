@@ -63,7 +63,7 @@ t_stack	*ft_pa(t_stack *stack)
 	return (stack);
 }
 
-t_stack	*ft_ra(t_stack *stack)
+t_stack	*ft_ra(t_stack *stack, int status)
 {
 	t_lst	*last;
 	t_lst	*hold2;
@@ -77,6 +77,33 @@ t_stack	*ft_ra(t_stack *stack)
 	last -> next = hold2;
 	hold2 -> next = NULL;
 	hold2 -> prev = last;
-	ft_printf("ra\n");
+	if (status)
+		ft_printf("ra\n");
 	return (stack);
+}
+
+void	ft_sa(t_stack *stack, int status)
+{
+	int	temp;
+
+	if (!stack -> a_top -> next)
+		return ;
+	temp = stack -> a_top -> nbr;
+	stack -> a_top -> nbr = stack -> a_top -> next -> nbr;
+	stack -> a_top -> next -> nbr = temp;
+	if(status)
+		ft_printf("sa\n");
+}
+
+void	ft_sb(t_stack *stack, int status)
+{
+	int	temp;
+
+	if (!stack -> b_top -> next)
+		return ;
+	temp = stack -> b_top -> nbr;
+	stack -> b_top -> nbr = stack -> b_top -> next -> nbr;
+	stack -> b_top -> next -> nbr = temp;
+	if(status)
+		ft_printf("sb\n");
 }

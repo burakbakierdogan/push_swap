@@ -6,7 +6,7 @@
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 06:43:19 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/21 03:58:00 by berdogan         ###   ########.fr       */
+/*   Updated: 2022/10/21 06:15:56 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_stack	*ft_stack_operations2(t_stack  *stack, t_counter counter, int size)
 					counter.k++;
 			}
 			else
-				stack = ft_ra(stack);
+				stack = ft_ra(stack, 1);
 			counter.j++;
 		}
 		while (counter.k > 0)
@@ -57,7 +57,6 @@ t_stack	*ft_stack_operations2(t_stack  *stack, t_counter counter, int size)
 void	ft_stack_operations(t_stack *stack, int max_str, int size)
 {
 	t_counter	counter;
-	t_lst *hold;
 	counter.i = 0;
 	counter.j = 0;
 	counter.k = 0;
@@ -67,11 +66,5 @@ void	ft_stack_operations(t_stack *stack, int max_str, int size)
 		counter.j = 0;
 		counter.k = 0;
 		counter.i++;
-	}
-	hold = stack -> a_top;
-	while (hold)
-	{
-		ft_printf("%d ", hold ->nbr);
-		hold = hold -> next;
 	}
 }

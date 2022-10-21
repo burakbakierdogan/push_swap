@@ -18,16 +18,14 @@ int	main(int ac, char *argv[])
 	t_error	ptr;
 	t_lst	*a;
 	t_lst	*a_clone;
-	t_lst	*hold;
 
 	ptr = ft_error_management (ac, argv);
-	a = ft_create_stack_a(ptr.ptr, ptr.size);
+	a = ft_create_stack_a (ptr.ptr, ptr.size);
 	a_clone = ft_clone_a (a);
-	a_clone = ft_radix_sort(a_clone);
-	ft_index_match(a_clone, a);
-	hold = a;
-	ft_pushswap(a);
-	ft_free_stack_and_contents(a_clone);
+	a_clone = ft_radix_sort (a_clone);
+	ft_index_match (a_clone, a);
+	ft_pushswap (a);
+	ft_free_stack_and_contents (a_clone);
 	//while (1);
 	return (0);
 }

@@ -6,7 +6,7 @@ int main()
     int i;
     /* It returns the same sequence of random number
     on every execution of the program. */
-    for (i = 0; i <500; i++)
+    for (i = 0; i <100; i++)
     {
         printf("%d ", rand());
      }
