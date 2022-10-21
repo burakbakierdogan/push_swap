@@ -6,7 +6,7 @@
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 06:43:19 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/21 06:15:56 by berdogan         ###   ########.fr       */
+/*   Updated: 2022/10/21 11:27:28 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,34 +32,35 @@ int	ft_max_len(t_lst *a, int len)
 	return (i);
 }
 
-t_stack	*ft_stack_operations2(t_stack  *stack, t_counter counter, int size)
+t_stack	*ft_stack_operations2(t_stack *stack, t_counter counter, int size)
 {
-		while (counter.j < size)
+	while (counter.j < size)
+	{
+		if (counter.i >= (int)ft_strlen(stack ->a_top -> i_nbr)
+			|| (stack -> a_top -> i_nbr[counter.i] == '0'))
 		{
-			if (counter.i >= (int)ft_strlen( stack ->a_top -> i_nbr)
-				|| (stack -> a_top -> i_nbr[counter.i] == '0'))
-			{
-					stack = ft_pb(stack);
-					counter.k++;
-			}
-			else
-				stack = ft_ra(stack, 1);
-			counter.j++;
+			stack = ft_pb(stack);
+			counter.k++;
 		}
-		while (counter.k > 0)
-		{
-			stack = ft_pa(stack);
-			counter.k--;
-		}
-		return (stack);
+		else
+			stack = ft_ra(stack, 1);
+		counter.j++;
+	}
+	while (counter.k > 0)
+	{
+		stack = ft_pa(stack);
+		counter.k--;
+	}
+	return (stack);
 }
 
 void	ft_stack_operations(t_stack *stack, int max_str, int size)
 {
 	t_counter	counter;
-	counter.i = 0;
+
 	counter.j = 0;
 	counter.k = 0;
+	counter.i = 0;
 	while (counter.i < max_str)
 	{
 		stack = ft_stack_operations2(stack, counter, size);

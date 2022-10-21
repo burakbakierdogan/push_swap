@@ -77,4 +77,5 @@ t_stack	*ft_rr(t_stack *stack);
 t_stack	*ft_rra(t_stack *stack, int status);
 t_stack	*ft_rrb(t_stack *stack, int status);
 t_stack	*ft_rrr(t_stack *stack);
+void	ft_mid_sort(t_stack *stack, int size);
 #endif

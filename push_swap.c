@@ -26,7 +26,5 @@ int	main(int ac, char *argv[])
 	ft_index_match (a_clone, a);
 	ft_pushswap (a);
 	ft_free_stack_and_contents (a_clone);
-	//while (1);
 	return (0);
 }
-

@@ -6,7 +6,7 @@
 #    By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 14:19:16 by berdogan          #+#    #+#              #
-#    Updated: 2022/10/21 06:56:31 by berdogan         ###   ########.fr        #
+#    Updated: 2022/10/21 11:43:25 by berdogan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,12 @@ CFLAGS := -Wall -Werror -Wextra -o
 SRCS := push_swap.c push_swap_utils.c ft_error_management.c ft_radix_sort.c \
 		ft_radix_sort_utils.c linked_list_utils.c ft_radix_sort_utils_1.c \
 		ft_pushswap.c stack_operations.c ft_pushswap_utils.c stack_operations1.c \
-		stack_operations2.c
+		stack_operations2.c ft_mid_sort.c
 
 all: mlibft $(NAME)
 
 $(NAME): $(SRCS)
-	$(CC) $(CFLAGS) $(NAME) $(SRCS) libft/libft.a -g
+	$(CC) $(CFLAGS) $(NAME) $(SRCS) libft/libft.a
 mlibft: $(SRCS)
 	make -C ./libft
 clean:

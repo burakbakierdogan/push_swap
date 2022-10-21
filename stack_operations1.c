@@ -6,7 +6,7 @@
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 06:23:21 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/21 06:52:06 by berdogan         ###   ########.fr       */
+/*   Updated: 2022/10/21 11:32:05 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_stack	*ft_rb(t_stack *stack, int status)
 	t_lst	*last;
 	t_lst	*hold2;
 
-	last  = stack -> b_top;
+	last = stack -> b_top;
 	hold2 = stack -> b_top;
 	stack -> b_top = stack -> b_top -> next;
 	stack -> b_top -> prev = NULL;
@@ -43,7 +43,7 @@ t_stack	*ft_rr(t_stack *stack)
 {
 	stack = ft_ra(stack, 0);
 	stack = ft_rb(stack, 0);
-	fr_printf("rr\n");
+	ft_printf("rr\n");
 	return (stack);
 }
 

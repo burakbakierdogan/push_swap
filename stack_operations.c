@@ -91,8 +91,8 @@ void	ft_sa(t_stack *stack, int status)
 	temp = stack -> a_top -> nbr;
 	stack -> a_top -> nbr = stack -> a_top -> next -> nbr;
 	stack -> a_top -> next -> nbr = temp;
-	if(status)
-		ft_printf("sa\n");
+	if (status)
+		ft_printf ("sa\n");
 }
 
 void	ft_sb(t_stack *stack, int status)
@@ -104,6 +104,6 @@ void	ft_sb(t_stack *stack, int status)
 	temp = stack -> b_top -> nbr;
 	stack -> b_top -> nbr = stack -> b_top -> next -> nbr;
 	stack -> b_top -> next -> nbr = temp;
-	if(status)
-		ft_printf("sb\n");
+	if (status)
+		ft_printf ("sb\n");
 }

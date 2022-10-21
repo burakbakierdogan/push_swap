@@ -89,8 +89,8 @@ void	ft_get_index(t_lst *a_clone)
 	i = 0;
 	while (a_clone)
 	{
-		a_clone -> i_nbr = ft_revstr (ft_itoa_base_v2(i, 2, 'X'));
-		a_clone -> nbr = i++;
+		a_clone -> i_nbr = ft_revstr (ft_itoa_base_v2(i++, 2, 'X'));
+		a_clone -> nbr = i;
 		a_clone = a_clone -> next;
 	}
 }
