@@ -6,7 +6,7 @@
 #    By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 14:19:16 by berdogan          #+#    #+#              #
-#    Updated: 2022/10/20 06:49:49 by berdogan         ###   ########.fr        #
+#    Updated: 2022/10/21 00:14:34 by berdogan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,4 +29,3 @@ fclean: clean
 	rm -rf $(NAME)
 	rm -rf libft/libft.a
 re: fclean all
-

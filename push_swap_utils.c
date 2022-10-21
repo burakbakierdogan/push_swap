@@ -82,7 +82,7 @@ int	ft_is_sorted(int *ptr, int size)
 	return (1);
 }
 
-static	void	ft_get_index(t_lst *a_clone)
+void	ft_get_index(t_lst *a_clone)
 {
 	int	i;
 

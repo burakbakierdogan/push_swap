@@ -26,25 +26,9 @@ int	main(int ac, char *argv[])
 	a_clone = ft_radix_sort(a_clone);
 	ft_index_match(a_clone, a);
 	hold = a;
-	ft_pushswap(a_clone, a);
-	/*while (hold)
-	{
-		ft_printf ("sayi = %d  index number = %d  char s_nbr = %s  char i_nbr = %s\n",
-			ft_atoi_base (hold -> s_nbr, 2), hold ->nbr, hold -> s_nbr, hold -> i_nbr);
-		hold = hold -> next;
-	}
-	ft_printf("\n");
-	*/
-	//ft_free_stack_and_contents(a_clone);
-	//ft_free_stack_and_contents(a);
+	ft_pushswap(a);
+	ft_free_stack_and_contents(a_clone);
+	//while (1);
 	return (0);
 }
-/*
-hold = a_clone;
-	while (hold)
-	{
-		ft_printf ("%d ", ft_atoi_base (hold -> s_nbr, 2));
-		hold = hold -> next;
-	}
-	ft_printf("\n");
-*/
+

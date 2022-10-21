@@ -44,6 +44,8 @@ typedef struct s_counter
 	int	i;
 	int	j;
 	int	k;
+
+
 }	t_counter;
 
 t_error	ft_error_management(int size, char *argv[]);
@@ -62,9 +64,11 @@ t_lst	*ft_sort(t_lst *sign);
 t_lst	*ft_reverse_list(t_lst *negative);
 int		ft_is_sorted(int *ptr, int size);
 void	ft_index_match(t_lst *a_clone, t_lst *a);
-void	ft_pushswap(t_lst *a_clone, t_lst *a);
+void	ft_pushswap(t_lst *a);
 t_stack	*ft_pb(t_stack *stack);
 t_stack	*ft_pa(t_stack *stack);
 t_stack	*ft_ra(t_stack *stack);
 int		ft_max_len(t_lst *a, int len);
+void	ft_stack_operations(t_stack *stack, int max_str, int size);
+void	ft_check_numbers(int *ptr, int nbr, char *str, int k);
 #endif

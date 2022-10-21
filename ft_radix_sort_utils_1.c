@@ -6,7 +6,7 @@
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 07:19:35 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/20 06:42:37 by berdogan         ###   ########.fr       */
+/*   Updated: 2022/10/21 03:59:49 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static	int	ft_max_str_len(t_lst *sign)
 	return (i);
 }
 
-static	t_lst	*ft_binary_sort(t_lst *sign, int i)
+t_lst	*ft_binary_sort(t_lst *sign, int i)
 {
 	t_lst	*zero;
 	t_lst	*one;

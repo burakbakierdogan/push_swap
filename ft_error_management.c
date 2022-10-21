@@ -6,14 +6,14 @@
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 01:46:53 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/20 03:16:35 by berdogan         ###   ########.fr       */
+/*   Updated: 2022/10/21 03:59:26 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
 
-static	void	ft_check_numbers(int *ptr, int nbr, char *str, int k)
+void	ft_check_numbers(int *ptr, int nbr, char *str, int k)
 {
 	int	i;
 	int	duplicate;
@@ -38,7 +38,7 @@ static	void	ft_check_numbers(int *ptr, int nbr, char *str, int k)
 	}
 }
 
-static	void	ft_forbidden(char *str)
+void	ft_forbidden(char *str)
 {
 	int	i;
 
@@ -61,7 +61,7 @@ static	void	ft_forbidden(char *str)
 	}
 }
 
-static	char	**ft_get_args(int size, char **argv)
+char	**ft_get_args(int size, char **argv)
 {
 	char	**str;
 	int		i;

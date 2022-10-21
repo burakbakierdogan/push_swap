@@ -6,7 +6,7 @@
 /*   By: berdogan <berdogan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 09:26:08 by berdogan          #+#    #+#             */
-/*   Updated: 2022/10/19 19:39:55 by berdogan         ###   ########.fr       */
+/*   Updated: 2022/10/21 04:00:26 by berdogan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_reverse(t_lst *positive, t_lst *negative)
 	}
 }
 
-static	t_lst	*ft_new_signed(t_lst *sign, char *content)
+t_lst	*ft_new_signed(t_lst *sign, char *content)
 {
 	if (!sign)
 	{
